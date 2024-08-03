@@ -1,0 +1,120 @@
+img{
+    display: block;
+}
+
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; 
+  }
+.card-img-one {
+    height: auto;
+    object-fit: cover; 
+  }
+  
+
+.box{
+    display: flex;
+    flex-flow: row nowrap;
+    max-width: 100%;
+    overflow-x: scroll;
+    height: auto;
+    border-radius: 10px;
+}
+
+.title{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.all{
+    font-size: larger;
+    font-weight: bold;
+    transition: all 0.3s;
+    color: #000;
+    cursor: pointer;
+}
+
+.all:hover{
+    color: #0000008e;
+}
+
+.text{
+    font-size:1rem ;
+    font-weight: 300;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text_div{
+    width: 85%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-top: 1.2rem;
+}
+
+.description{
+    line-height: 2rem;
+}
+
+.card_footer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.payment-tab{
+    background-color: rgba(0, 255, 255, 0.247);
+    border-radius: 1.2rem;
+    box-shadow: 2px 2px 3px rgba(0, 255, 255, 0.795);
+}
+
+.offer-text{
+    text-decoration: line-through;
+}
+
+.show-n{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.show-c{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.no-wrap{
+    white-space: nowrap;
+    text-align: start;
+}
+
+.mangement-link{
+    text-decoration: none;
+    color: #999;
+    font-size: 1.1rem;
+    transition: all .3s
+}
+
+.mangement-link:hover,.mangement-link:focus{
+    color: #ccc;
+    transform: scale(1.1);
+}
+
+@media screen and (max-width:992px) {
+    .search-form{
+        margin: 1.1rem;
+    }
+    .nav{
+        margin-right: 1.1rem;
+    }
+}

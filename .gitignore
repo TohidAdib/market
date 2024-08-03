@@ -1,0 +1,9 @@
+db.sqlite3
+venv
+.vscode
+node_modules
+public
+package-lock.json
+package.json
+localsettings.py
+media

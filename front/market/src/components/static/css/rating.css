@@ -1,0 +1,23 @@
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 20px 0;
+  }
+  
+  .star-rating .on .star {
+    color: gold;
+  }
+  
+  .star-rating .off .star {
+    color: gray;
+  }
+  
+  .star-rating button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  

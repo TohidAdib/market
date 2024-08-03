@@ -1,0 +1,28 @@
+.box{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 3px;
+}
+
+@media screen and (max-width:576px)  {
+    .large{
+        display: none;
+    }
+    .small{
+        display: block;
+    }
+    .parent{
+        border-bottom: 2px solid #999;
+        padding: 4px;
+    }
+}
+@media screen and (min-width:576px) {
+    .large{
+        display: block;
+    }
+    .small{
+        display: none;
+    }
+}
