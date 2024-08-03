@@ -114,4 +114,76 @@ README شما اکنون بهبود یافته و سازماندهی شده اس
 
 
 
+افزودن reCAPTCHA به کامپوننت‌های Login و SignIn
 
+برای استفاده از reCAPTCHA در فرم‌های لاگین و ثبت‌نام (SignIn) در ری‌اکت، مراحل زیر را دنبال کنید:
+
+    نصب کتابخانه reCAPTCHA:
+    اطمینان حاصل کنید که کتابخانه react-google-recaptcha در پروژه‌ی ری‌اکت نصب شده است. اگر این کتابخانه را نصب نکرده‌اید، با دستور زیر آن را نصب کنید:
+
+    bash
+
+npm install react-google-recaptcha
+
+افزودن reCAPTCHA به کامپوننت Login:
+به کامپوننت LoginForm.js بروید و مطمئن شوید که reCAPTCHA به درستی در فرم لاگین استفاده شده است. نمونه کد زیر برای راه‌اندازی reCAPTCHA در کامپوننت لاگین است:
+
+javascript
+
+import ReCAPTCHA from "react-google-recaptcha";
+
+class LoginForm extends Component {
+  // سایر کدها
+
+  handleRecaptcha = (token) => {
+    this.setState({ recaptchaToken: token });
+  };
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit} className="container mt-5">
+        {/* سایر فیلدهای فرم */}
+        <div className="form-group my-4 col-lg-3 col-md-6 col-12 mx-auto">
+          <ReCAPTCHA
+            sitekey="Your_RECAPTCHA_PUBLIC_KEY"
+            onChange={this.handleRecaptcha}
+          />
+        </div>
+        {/* سایر کدها */}
+      </form>
+    );
+  }
+}
+
+افزودن reCAPTCHA به کامپوننت SignIn:
+به کامپوننت SignInForm.js بروید و کد مشابه زیر را برای افزودن reCAPTCHA به فرم ثبت‌نام اضافه کنید:
+
+javascript
+
+import ReCAPTCHA from "react-google-recaptcha";
+
+class SignInForm extends Component {
+  // سایر کدها
+
+  handleRecaptcha = (token) => {
+    this.setState({ recaptchaToken: token });
+  };
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit} className="container mt-5">
+        {/* سایر فیلدهای فرم */}
+        <div className="form-group my-4 col-lg-3 col-md-6 col-12 mx-auto">
+          <ReCAPTCHA
+            sitekey="Your_RECAPTCHA_PUBLIC_KEY"
+            onChange={this.handleRecaptcha}
+          />
+        </div>
+        {/* سایر کدها */}
+      </form>
+    );
+  }
+}
+
+تنظیم کلید‌های reCAPTCHA:
+مطمئن شوید که کلیدهای RECAPTCHA_PUBLIC_KEY و RECAPTCHA_PRIVATE_KEY را در فایل تنظیمات بک‌اند (settings.py) و در فایل‌های کامپوننت ری‌اکت تنظیم کرده‌اید.

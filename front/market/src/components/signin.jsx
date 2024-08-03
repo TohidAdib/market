@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
+import key from "../REACAPCH/reacpcha";
 
 class SignInForm extends Component {
   constructor(props) {
@@ -150,7 +151,7 @@ class SignInForm extends Component {
           </div>
           <div className="form-group my-4 col-lg-3 col-md-6 col-12 mx-auto">
             <ReCAPTCHA
-              sitekey="6LdJjBUqAAAAAJI1gWog6N8c_jqqIMEhYzxP7Qyx"
+              sitekey={key}
               onChange={this.handleRecaptcha}
               ref={this.recaptchaRef}  // رفرنس دادن به ReCAPTCHA
             />

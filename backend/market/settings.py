@@ -157,3 +157,6 @@ MEDIA_URL = '/media/'
 # مسیر دایرکتوری برای ذخیره فایل‌های مدیا
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+RECAPTCHA_PUBLIC_KEY = '6LdJjBUqAAAAAJI1gWog6N8c_jqqIMEhYzxP7Qyx'
+RECAPTCHA_PRIVATE_KEY = '6LdJjBUqAAAAAAO_aqt6wjIkFyflAvWYQvEJxzEh'
+
