@@ -1,0 +1,117 @@
+# Market Project
+
+This project is a full-stack web application built using Django for the backend and React for the frontend. The following instructions will guide you through setting up the project on your local machine.
+
+
+## Installation Guide
+
+Follow these steps to set up the project on your local machine.
+
+### 1. Set Up Directories
+1. Create a directory on your desktop with any name you prefer.
+2. Inside this directory, create two subdirectories: `backend` and `frontend`:
+    ```bash
+    ├───backend
+    └───frontend
+    ```
+
+### 2. Backend Setup
+1. Navigate to the `backend` directory and download the `requirements.txt` file from the GitHub repository. Save it in the `backend` directory.
+2. Open a command prompt in the `backend` directory and run the following commands:
+    ```bash
+    python -m venv venv
+    .\venv\scripts\activate   # For Windows
+    # source venv/bin/activate  # For macOS/Linux
+    pip install -r requirements.txt
+    django-admin startproject market
+    ```
+
+3. Download the `users` and `products` apps from the GitHub repository and add them to the `backend` directory of your project.
+
+### 3. Django Settings Configuration
+1. Open the `settings.py` file located in the `market` directory and make the following changes:
+    - Add the following apps to `INSTALLED_APPS`:
+        ```python
+        INSTALLED_APPS = [
+            ...
+            "corsheaders",
+            "rest_framework",
+            "rest_framework.authtoken",
+            "products",
+            "users",
+            ...
+        ]
+        ```
+    - Add CORS settings:
+        ```python
+        CORS_ALLOWED_ORIGINS = [
+            "http://localhost:3000"
+        ]
+        ```
+    - Configure REST framework:
+        ```python
+        REST_FRAMEWORK = {
+            'DEFAULT_AUTHENTICATION_CLASSES': [
+                'rest_framework.authentication.TokenAuthentication',
+            ],
+            # Other settings
+        }
+        ```
+    - Update `MIDDLEWARE` to include CORS:
+        ```python
+        MIDDLEWARE = [
+            ...
+            "corsheaders.middleware.CorsMiddleware",
+            ...
+        ]
+        ```
+    - Configure media file settings:
+        ```python
+        MEDIA_URL = '/media/'
+        MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+        ```
+
+### 4. Google reCAPTCHA Configuration
+1. Go to [Google reCAPTCHA](https://www.google.com/recaptcha) and generate your site and secret keys.
+2. Add the keys to your `settings.py`:
+    ```python
+    RECAPTCHA_PUBLIC_KEY = 'your-public-key-here'
+    RECAPTCHA_PRIVATE_KEY = 'your-private-key-here'
+    ```
+
+### 5. Frontend Setup
+1. Navigate to the `frontend` directory.
+2. Run the following commands to set up the React application:
+    ```bash
+    npx create-react-app market
+    cd market
+    npm install bootstrap axios moment react-bootstrap react-google-recaptcha react-router-dom
+    ```
+
+3. Download the `src` folder from the GitHub repository and replace the existing `src` folder in your `frontend/market` directory.
+
+
+## Conclusion
+
+Once you've completed the steps above, you should be ready to start the project. Navigate to the `backend` directory and run the Django development server:
+```bash
+python manage.py runserver
+
+
+npm start
+
+
+
+
+
+
+### 4. توضیحات تکمیلی
+اگر نیاز به توضیحات بیشتری دارید (مثل دستورالعمل‌های اجرای تست‌ها، توضیح در مورد ساختار پروژه و غیره)، می‌توانید آنها را در بخش‌های اضافی اضافه کنید.
+
+### جمع‌بندی
+README شما اکنون بهبود یافته و سازماندهی شده است و همچنین قابلیت خوانایی بیشتری دارد. اگر نیاز به تغییرات یا بخش‌های دیگری دارید، بفرمایید!
+
+
+
+
+
